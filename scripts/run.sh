@@ -23,4 +23,4 @@ if [[ ! -e $INIT_STAMP ]]; then
 fi
 
 echo "Starting Mosquitto ..."
-/usr/local/sbin/mosquitto -c $CONF_DIR/mosquitto.conf
+/usr/sbin/mosquitto -c $CONF_DIR/mosquitto.conf

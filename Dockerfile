@@ -14,14 +14,18 @@
 # limitations under the License.
 #
 
-FROM ansi/mosquitto:latest
+FROM toke/mosquitto:latest
 
 MAINTAINER Jacek Gerbszt <jacek.gerbszt@intel.com>
 
-ENV CONF_DIR /etc/mosquitto
+ENV CONF_DIR /mqtt/config
 
 ADD scripts /scripts
 
 RUN chmod +x /scripts/*.sh
 
-CMD ["/scripts/run.sh"]
+USER mosquitto
+
+ENTRYPOINT ["/scripts/run.sh"]
+CMD [""]
+
